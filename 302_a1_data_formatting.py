@@ -10,7 +10,7 @@ fields = (
     'latest.student.size,'
     'latest.school.endowment.end,'
     'latest.cost.tuition.in_state,'
-    'latest.earnings.2_yr_after_completion.median,'
+    'latest.earnings.1_yr_after_completion.median,'
     'latest.completion.consumer_rate,'
     'latest.admissions.admission_rate.overall,'
     'latest.school.carnegie_undergrad,'
@@ -66,7 +66,7 @@ df = pd.DataFrame(all_schools)
 df = df.rename(columns={
     'latest.school.name': 'School Name',
     'latest.school.endowment.end': 'Endowment',
-    'latest.earnings.1_yr_after_completion.median': 'Median Salary (2 Years After Graduation)',
+    'latest.earnings.1_yr_after_completion.median': 'Median Salary (1 Year After Graduation)',
     'latest.student.size': 'Student Size',
     'latest.cost.tuition.in_state': 'In-State Tuition',
     'latest.completion.consumer_rate': 'Completion Rate',
@@ -92,7 +92,7 @@ df = df[
     (df['Carnegie Classification (Undergraduate)'] != -2) &
     (df['Carnegie Size Setting'] != -2) &
     df['Overall Admission Rate'].notnull() &
-    (df['Median Salary (2 Years After Graduation)'] > 0) &
+    (df['Median Salary (1 Year After Graduation)'] > 0) &
     df['Average SAT Score'].notnull()
 ]
 

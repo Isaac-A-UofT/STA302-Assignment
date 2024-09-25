@@ -7,7 +7,7 @@ school_data <- na.omit(school_data)
 #Also have: Carnegie Classification (Undergraduate), Carnegie Size Setting, School Locale
 
 # Fit a regression model
-model <- lm(`Median Salary (2 Years After Graduation)` ~ 
+model <- lm(`Median Salary (1 Year After Graduation)` ~ 
               `Student Size` + 
               `In-State Tuition` + 
               `Completion Rate` + 
@@ -21,7 +21,7 @@ model <- lm(`Median Salary (2 Years After Graduation)` ~
 
 fitted_values = fitted(model)
 residual_values = resid(model)
-price_values = school_data$`Median Salary (2 Years After Graduation)`
+price_values = school_data$`Median Salary (1 Year After Graduation)`
 
 # Create a new dataset excluding the 25 largest fitted values
 sorted_indices <- order(fitted_values, decreasing = TRUE)
@@ -37,7 +37,7 @@ residual_values_filtered <- residual_values[-indices_to_remove]
 # Create the price vs regression plot
 plot(fitted_values, price_values,
      main = "Price versus regression fit",
-     xlab = "Fitted values", ylab = "Median Salary (2 Years After Graduation)")
+     xlab = "Fitted values", ylab = "Median Salary (1 Year After Graduation)")
 abline(0, 1,
        col="blue", lty=1)
 legend("bottomright", legend=c("y = x line"),
@@ -48,7 +48,7 @@ legend("bottomright", legend=c("y = x line"),
 # Create the price vs regression plot excluding the 25 largest fitted values
 plot(fitted_values_filtered, price_values_filtered,
      main = "Price versus regression fit (Excluding 25 Largest Fitted Values)",
-     xlab = "Fitted values", ylab = "Median Salary (2 Years After Graduation)")
+     xlab = "Fitted values", ylab = "Median Salary (1 Year After Graduation)")
 abline(0, 1,
        col="blue", lty=1)
 legend("bottomright", legend=c("y = x line"),

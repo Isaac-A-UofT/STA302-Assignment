@@ -2,7 +2,7 @@ library(readxl)
 school_data <- read_excel("302Assignment/school_data.xlsx")
 
 # Fit a regression model
-model <- lm(`Median Salary (2 Years After Graduation)` ~ 
+model <- lm(`Median Salary (1 Year After Graduation)` ~ 
               `Student Size` + 
               `In-State Tuition` + 
               `Completion Rate` + 
