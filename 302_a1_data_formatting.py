@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 import numpy as np
 
-api_key = 'eCU6CkESG62Cb3nRBXCedO8BOiMo3rWwFYdlcfsI'
+api_key = ''
 base_url = 'https://api.data.gov/ed/collegescorecard/v1/schools'
 
 fields = (
